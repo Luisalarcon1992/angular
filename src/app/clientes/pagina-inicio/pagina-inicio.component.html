@@ -1,0 +1,24 @@
+<section class="mx-auto max-w-[700px] bg-blue-200 text-center">
+    <form (submit)="agregar( )">
+        <input type="text" name="nombre" placeholder="Nombre" id="" class=" bg-blue-200"
+            [(ngModel)]="nuevoCliente.nombre">
+        <input type="number" name="credito" placeholder="Crédito" id="" class="  bg-blue-200"
+            [(ngModel)]="nuevoCliente.credito">
+        <button type="submit">Enviar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Crédito</td>
+            </tr>
+        </thead>
+        <tbody *ngFor="let cliente of clientes">
+            <tr>
+                <td>{{cliente.nombre}}</td>
+                <td>{{cliente.credito}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

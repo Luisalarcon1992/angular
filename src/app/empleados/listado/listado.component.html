@@ -1,0 +1,26 @@
+<section class="bg-slate-300 max-w-[700px] mx-auto mt-2 text-center">
+    <h1>Listado de empleados {{titulo | uppercase}}</h1>
+    <button class="p-2 my-3 bg-blue-400 font-bold mr-4" (click)="borrar()">Borrar Ultimo</button>
+    <button class="p-2 my-3 bg-blue-400 font-bold" (click)="borrarShift()">Borrar Primero</button>
+    <table class="mx-auto top-0 w-[400px] mb-10">
+        <thead>
+            <tr class="border border-solid border-red-600 bg-red-300 text-red-950 font-bold">
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Dirección</td>
+                <td>Sueldo</td>
+            </tr>
+        </thead>
+        <tbody *ngFor="let empleado of empleados">
+            <tr class="border border-solid border-red-600">
+                <td>{{empleado.nombre | uppercase}}</td>
+                <td>{{empleado.apellido}}</td>
+                <td>{{empleado.direccion}}</td>
+                <td>{{empleado.sueldo | currency}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <article *ngIf="empleadoBorrado">
+        <h4>{{empleadoBorrado}}</h4>
+    </article>
+</section>
